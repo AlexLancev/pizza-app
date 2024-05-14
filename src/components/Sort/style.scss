@@ -1,0 +1,18 @@
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &__category-type {
+        font-weight: 400;
+    }
+
+    &__popup {
+    }
+
+    &__type {
+        font-size: 17px;
+        color: #ff6200;
+        text-decoration: underline;
+    }
+}
