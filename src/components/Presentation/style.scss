@@ -10,6 +10,21 @@
     &__image {
     }
 
+    &__remove {
+        padding: 10px 32px;
+        color: #ffffff;
+        border-radius: 10px;
+        background-color: #4dcc60;
+    }
+
+    &__add {
+        background-color: #f1f1f1;
+        border: 1px solid #dedede;
+        padding: 10px 32px;
+        color: #000000;
+        border-radius: 10px;
+    }
+
     &__info {
         width: 100%;
         max-width: 600px;
@@ -65,16 +80,5 @@
     &__weight {
         font-size: 16px;
         color: #646464;
-    }
-
-    &__add {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background-color: #4dcc60;
-        box-shadow: 0px 4px 8px rgba(105, 105, 105, 0.1);
-        color: #ffffff;
-        border-radius: 10px;
-        padding: 10px 20px;
     }
 }

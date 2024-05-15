@@ -92,9 +92,24 @@
     }
 
     &__add {
-        background-color: #4dcc60;
-        padding: 10px 20px;
+        background-color: #f1f1f1;
+        border: 1px solid #dedede;
+        padding: 10px 32px;
+        color: #000000;
+        border-radius: 10px;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #e1e1e1;
+            border: 1px solid #989898;
+        }
+    }
+    
+    &__remove {
+        padding: 10px 32px;
         color: #ffffff;
         border-radius: 10px;
+        border: 1px solid transparent;
+        background-color: #4dcc60;
     }
 }

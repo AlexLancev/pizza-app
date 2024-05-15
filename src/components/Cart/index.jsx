@@ -1,8 +1,9 @@
-import { bodyScroll } from "../../utlis/body-scroll";
-import "./style.scss";
 import React from "react";
+import { bodyScroll } from "../../utlis/body-scroll";
+import { IoIosClose } from "react-icons/io";
+import "./style.scss";
 
-function Cart({ elem }) {
+function Cart({ elem, cart = [], onRemoveItem }) {
   const { unLock } = bodyScroll;
 
   const closeCart = () => {
@@ -12,8 +13,13 @@ function Cart({ elem }) {
 
   return (
     <div className={"cart"} ref={elem}>
-      <button className="cart__lock" onClick={closeCart}>
-        X
+      <button
+        className="cart__lock"
+        onClick={closeCart}
+        title="Закрыть корзину товаров"
+        aria-label="Закрыть корзину"
+      >
+        <IoIosClose className="cart__lock-icon" size={40} />
       </button>
       <div className="cart__inner">
         <div className="cart__order">
@@ -22,34 +28,52 @@ function Cart({ elem }) {
             Для совершения заказа, добавьте что-нибудь в корзину
           </p>
           <ul className="order">
-            <li className="order__item">
-              <img src="" alt="" className="order__image" />
-              <div className="order__details">
-                <div className="order__header">
-                  <b className="order__title">Курица с ананасами</b>
-                  <div className="order__quantity-inner">
-                    <button
-                      className="order__btn order__btn--plus"
-                      type="button"
-                    >
-                      +
-                    </button>
-                    <span className="order__quantity">x1</span>
-                    <button
-                      className="order__btn order__btn--minus"
-                      type="button"
-                    >
-                      -
-                    </button>
+            {cart.map((product) => {
+              return (
+                <li className="order__item" key={product.id}>
+                  <img
+                    width={120}
+                    height={120}
+                    src={product.image}
+                    alt={product.title}
+                    title={product.title}
+                    className="order__image"
+                  />
+                  <div className="order__details">
+                    <div className="order__header">
+                      <b className="order__title">{product.title}</b>
+                      <div className="order__quantity-inner">
+                        <button
+                          className="order__btn order__btn--plus"
+                          type="button"
+                        >
+                          -
+                        </button>
+                        <span className="order__btn order__quantity">x1</span>
+                        <button
+                          className="order__btn order__btn--minus"
+                          type="button"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    <span className="order__total">{product.price} руб</span>
                   </div>
-                </div>
-                <span className="order__total">499 руб</span>
-              </div>
-            </li>
+                  <button
+                    onClick={() => onRemoveItem(product)}
+                    type="button"
+                    className="order__remove-btn"
+                  >
+                    <IoIosClose className="order__lock-icon" size={20} />
+                  </button>
+                </li>
+              );
+            })}
           </ul>
           <div className="cart__full-price">
-            <span className="cart__total">Итого:</span>
-            <span className="cart__total-price">1999 руб</span>
+            <b className="cart__total">Итого:</b>
+            <span className="cart__total-price">499 руб</span>
           </div>
         </div>
         <div className="cart__contacts"></div>

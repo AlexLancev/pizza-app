@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Pagination } from "../Pagination";
 import axios from "axios";
 
-function Pizza() {
+function Pizza({ onAddToCart, cart }) {
   const [productData, setProductData] = useState([]);
   const [isLoad, setIsLoad] = useState(true);
   const [pageCurrent, setPageCurrent] = useState(1);
@@ -44,8 +44,13 @@ function Pizza() {
         onChangeSort={(i) => setSortType(i)}
         productData={productData}
         isLoad={isLoad}
+        onAddToCart={onAddToCart}
+        cart={cart}
       />
-      <Pagination limit={limit} onChangePage={(number) => setPageCurrent(number)} />
+      <Pagination
+        limit={limit}
+        onChangePage={(number) => setPageCurrent(number)}
+      />
     </div>
   );
 }

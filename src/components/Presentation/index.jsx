@@ -5,10 +5,12 @@ import { IoIosArrowBack } from "react-icons/io";
 import { sizeView } from "../../redux/size/reducer";
 import { sizeId } from "../../redux/size/reducer";
 import { useDispatch } from "react-redux";
+import { FaPlus } from "react-icons/fa6";
+import { IoMdCheckmark } from "react-icons/io";
 
 import "./style.scss";
 
-function Presentation() {
+function Presentation({ onAddToCart, cart }) {
   const presentation = useSelector(
     (state) => state.presentation.presentationProduct
   );
@@ -26,7 +28,21 @@ function Presentation() {
 
   const sizeIds = useSelector((state) => state.size.sizeId);
 
-  const { title, image, description, price, weight, name, id, category } = presentation;
+  const { title, image, description, price, weight, name, id, category } =
+    presentation;
+
+  const add = (presentation) => {
+    onAddToCart({
+      title: presentation.title,
+      image: presentation.image,
+      price: presentation.price,
+      weight: presentation.weight,
+      name: presentation.name,
+      cartId: presentation.id,
+    });
+  };
+
+  console.log(presentation);
 
   return (
     <section className="presentation">
@@ -83,8 +99,20 @@ function Presentation() {
                   </li>
                 ))}
             </ul>
-            <button className="presentation__add" type="button">
-              Добавить
+            <button
+              className={
+                cart.find((el) => el.cartId === presentation.id)
+                  ? "presentation__remove"
+                  : "presentation__add"
+              }
+              type="button"
+              onClick={() => add(presentation)}
+            >
+              {
+                  cart.find((el) => el.cartId === presentation.id)
+                    ? <IoMdCheckmark />
+                    : <FaPlus />
+                }
             </button>
           </div>
         </div>

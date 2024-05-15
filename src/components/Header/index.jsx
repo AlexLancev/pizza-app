@@ -3,9 +3,10 @@ import { Category } from "../Category";
 import { Cart } from "../Cart";
 import { bodyScroll } from "../../utlis/body-scroll";
 import { Search } from "../Search";
+import { IoCartOutline } from "react-icons/io5";
 import "./style.scss";
 
-function Header() {
+function Header({ cart, onRemoveItem }) {
   const { lock } = bodyScroll;
   const elem = React.useRef(null);
 
@@ -32,12 +33,18 @@ function Header() {
           </a>
           <div className="a">
             <Search />
-            <button type="button" onClick={bthClick} className="cart-btn">
-              <span className="cart-btn__text">Корзина</span>
-              <span className="cart-btn__quantity">0</span>
+            <button
+              type="button"
+              onClick={bthClick}
+              className="cart-btn"
+              title="Открыть корзину товаров"
+              aria-label="Открыть корзину товаров"
+            >
+              <IoCartOutline size={40} className="cart-btn__icon" />
+              <span className="cart-btn__quantity">{cart.length}</span>
             </button>
           </div>
-          <Cart elem={elem} />
+          <Cart onRemoveItem={onRemoveItem} cart={cart} elem={elem} />
         </div>
         <Category />
       </div>

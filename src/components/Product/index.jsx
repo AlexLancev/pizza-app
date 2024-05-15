@@ -6,10 +6,12 @@ import { presentationShow } from "../../redux/product/reducer";
 import { sizeView } from "../../redux/size/reducer";
 import { sizeId } from "../../redux/size/reducer";
 import { useSelector } from "react-redux";
+import { FaPlus } from "react-icons/fa6";
+import { IoMdCheckmark } from "react-icons/io";
 
 import "./style.scss";
 
-function Product({ productData, isLoad }) {
+function Product({ productData, isLoad, onAddToCart, cart }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -30,6 +32,17 @@ function Product({ productData, isLoad }) {
 
   const sizeIds = useSelector((state) => state.size.sizeId);
 
+  const add = (product) => {
+    onAddToCart({
+      title: product.title,
+      image: product.image,
+      price: product.price,
+      weight: product.weight,
+      name: product.name,
+      cartId: product.id,
+    });
+  };
+
   return isLoad ? (
     [...new Array(9)].map((_, index) => <MyLoader key={index} />)
   ) : (
@@ -37,7 +50,8 @@ function Product({ productData, isLoad }) {
       {productData.map((product) => (
         <li className="product__item" key={product.id}>
           <div className="product__box">
-            <button type="button"
+            <button
+              type="button"
               onClick={(e) => handleClick(e, product, product.id)}
               className="product__link"
             >
@@ -81,8 +95,21 @@ function Product({ productData, isLoad }) {
                   </span>
                 )}
               </div>
-              <button className="product__add" type="button">
-                Добавить
+              <button
+                onClick={() => add(product)}
+                className={
+                  cart.find((el) => el.cartId === product.id)
+                    ? "product__remove"
+                    : "product__add"
+                }
+                type="button"
+              >
+                {
+                  cart.find((el) => el.cartId === product.id)
+                    ? <IoMdCheckmark />
+                    : <FaPlus />
+                }
+               
               </button>
             </div>
           </div>

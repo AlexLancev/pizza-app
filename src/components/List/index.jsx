@@ -4,7 +4,7 @@ import { Sort } from "../Sort";
 
 import "./style.scss";
 
-function List({ productData, isLoad, value, onChangeSort }) {
+function List({ productData, isLoad, value, onChangeSort, onAddToCart, cart }) {
   return (
     <section className="product">
       <div className="product__header">
@@ -14,7 +14,7 @@ function List({ productData, isLoad, value, onChangeSort }) {
         <Sort value={value} onChangeSort={(i) => onChangeSort(i)} />
       </div>
       <ul className="product__list">
-        <Product productData={productData} isLoad={isLoad} />
+        <Product cart={cart} onAddToCart={onAddToCart} productData={productData} isLoad={isLoad} />
       </ul>
     </section>
   );
