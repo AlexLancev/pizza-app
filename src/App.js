@@ -10,12 +10,14 @@ import { Dessert } from "./components/Dessert";
 import { Sauces } from "./components/Sauces";
 import { Presentation } from "./components/Presentation";
 import { NotFoundPage } from "./components/NotFoundPage";
-import { Provider } from "react-redux";
-import { store } from "./redux/index";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { Stock } from "./components/Stock";
+import { cartShow } from "./redux/cart/reducer";
 import axios from "axios";
 
 function App() {
-  const [cartItems, setCartItems] = React.useState([]);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     async function fetchData() {
@@ -24,7 +26,7 @@ function App() {
           axios.get("https://6639ca471ae792804becc79a.mockapi.io/cart"),
         ]);
 
-        setCartItems(cartResponse.data);
+        dispatch(cartShow(cartResponse.data));
       } catch (error) {
         console.log("Ошибка при запросе данных ;(");
         console.error(error);
@@ -32,17 +34,15 @@ function App() {
     }
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   const onAddToCart = async (obj) => {
     try {
-      const findItem = cartItems.find(
+      const findItem = cartProduct.find(
         (item) => Number(item.cartId) === Number(obj.cartId)
       );
       if (findItem) {
-        setCartItems((prev) =>
-          prev.filter((item) => Number(item.cartId) !== Number(obj.cartId))
-        );
+        dispatch(cartShow(cartProduct.filter((item) => Number(item.cartId) !== Number(obj.cartId))));
         await axios.delete(
           `https://6639ca471ae792804becc79a.mockapi.io/cart/${findItem.id}`
         );
@@ -51,19 +51,17 @@ function App() {
           `https://6639ca471ae792804becc79a.mockapi.io/cart/`,
           obj
         );
-        setCartItems((prev) => [...prev, data]);
+        dispatch(cartShow([...cartProduct, data]));
 
-        setCartItems((prev) =>
-          prev.map((item) => {
-            if (item.id === data.id) {
-              return {
-                ...item,
-                id: data.id,
-              };
-            }
-            return item;
-          })
-        );
+        // dispatch(cartShow(cartProduct.map((item) => {
+        //     if (item.id === data.id) {
+        //       return {
+        //         ...item,
+        //         id: data.id,
+        //       };
+        //     }
+        //     return item;
+        //   })))
       }
     } catch (error) {
       console.log("Ошибка при добавлении в корзину");
@@ -76,42 +74,47 @@ function App() {
       axios.delete(
         `https://6639ca471ae792804becc79a.mockapi.io/cart/${product.id}`
       );
-      setCartItems((prev) =>
-        prev.filter((item) => Number(item.id) !== Number(product.id))
-      );
+      dispatch(cartShow(cartProduct.filter((item) => Number(item.id) !== Number(product.id))
+      ))
     } catch (error) {
       alert("Ошибка при удалении из корзины");
       console.error(error);
     }
   };
 
+  const cartProduct = useSelector(
+    (state) => state.cart.cartProduct
+  );
+
   return (
-    <Provider store={store}>
       <Routes>
         <Route
           path="/"
-          element={<Layout cart={cartItems} onRemoveItem={onRemoveItem} />}
+          element={<Layout cart={cartProduct} onRemoveItem={onRemoveItem} />}
         >
           <Route
             path="Pizza"
-            element={<Pizza onAddToCart={onAddToCart} cart={cartItems} />}
+            element={<Pizza onAddToCart={onAddToCart} cart={cartProduct} />}
           />
-          <Route path="Combo" element={<Combo />} />
+          <Route
+            path="Combo"
+            element={<Combo onAddToCart={onAddToCart} cart={cartProduct} />}
+          />
           <Route path="Upsters" element={<Upsters />} />
           <Route path="Snacks" element={<Snacks />} />
           <Route path="Beverages" element={<Beverages />} />
           <Route path="Dessert" element={<Dessert />} />
           <Route path="Sauces" element={<Sauces />} />
+          <Route path="Stock" element={<Stock />} />
           <Route
             path="/:title"
             element={
-              <Presentation cart={cartItems} onAddToCart={onAddToCart} />
+              <Presentation onAddToCart={onAddToCart} cart={cartProduct} />
             }
           />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-    </Provider>
   );
 }
 

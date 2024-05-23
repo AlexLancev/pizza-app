@@ -6,10 +6,10 @@ import "./style.scss";
 function Sort({ value, onChangeSort }) {
   const [popupOpen, setPopupOpen] = React.useState(false);
   const listCategory = [
-    { name: "цене ( DESС )", sortProperty: "price" },
-    { name: "цене ( ASС )", sortProperty: "-price" },
-    { name: "алфавиту ( DESС )", sortProperty: "title" },
-    { name: "алфавиту ( ASС )", sortProperty: "-title" },
+    { name: "Цене ( DESC )", sortProperty: "price" },
+    { name: "Цене ( ASС )", sortProperty: "-price" },
+    { name: "Алфавиту ( DESС )", sortProperty: "title" },
+    { name: "Алфавиту ( ASС )", sortProperty: "-title" },
   ];
 
   const onClickListItem = (i) => {
@@ -35,13 +35,17 @@ function Sort({ value, onChangeSort }) {
           {listCategory.map((obj, index) => {
             return (
               <li className="sort__type" key={index}>
-                <button
-                  onClick={() => onClickListItem(obj)}
-                  type="button"
-                  className="sort__type-btn"
-                >
-                  {obj.name}
-                </button>
+                {obj.name === value.name ? (
+                  <span className="sort__type-active">{obj.name}</span>
+                ) : (
+                  <button
+                    onClick={() => onClickListItem(obj)}
+                    type="button"
+                    className="sort__type-btn"
+                  >
+                    {obj.name}
+                  </button>
+                )}
               </li>
             );
           })}

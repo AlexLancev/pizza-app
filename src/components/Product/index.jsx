@@ -3,44 +3,71 @@ import { MyLoader } from "../Loader";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { presentationShow } from "../../redux/product/reducer";
-import { sizeView } from "../../redux/size/reducer";
-import { sizeId } from "../../redux/size/reducer";
-import { useSelector } from "react-redux";
 import { FaPlus } from "react-icons/fa6";
 import { IoMdCheckmark } from "react-icons/io";
-
+import { calcSize } from "../../utlis/calcPizza";
+import { add } from "../../utlis/addProduct";
+import { useSelector } from "react-redux";
 import "./style.scss";
 
+const arrSize = ["xl", "xxl", "xxxl"];
+
 function Product({ productData, isLoad, onAddToCart, cart }) {
+  const cartProduct = useSelector((state) => state.cart.cartProduct);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const currentInputArr = document.querySelectorAll('input[type="radio"]');
 
-  const handleClick = (e, product, id) => {
-    const input = e.target
-      .closest(".product__item")
-      .querySelector('input[type="radio"]:checked');
-    if (input) {
-      dispatch(sizeView(input.value));
-      dispatch(sizeId(id));
+  currentInputArr.forEach((el) => {
+    if (el.checked) {
+      el.classList.add("active");
+    } else if (!el.checked) {
+      el.classList.remove("active");
     }
-    dispatch(presentationShow(product));
+  });
+
+  const handleClick = (e, product) => {
+    const parent = e.target.closest("[data-parrent]");
+    const currentInput = parent.querySelector('input[type="radio"]:checked');
+
+    dispatch(
+      presentationShow({
+        title: product.title,
+        image: product.image,
+        price: product.price,
+        weight: product.weight,
+        name: product.name,
+        id: product.id,
+        size: product.size,
+        sizeCurrent: Number(currentInput.value),
+        category: product.category,
+      })
+    );
     navigate(`/${product.title}`);
     window.scrollTo(0, 0);
   };
 
-  const sizeViews = useSelector((state) => state.size.sizeCurrent);
+  const onAdd = (e, product, onAddToCart) => {
+    add(e, product, onAddToCart);
+    const parent = e.target.closest("[data-parrent]");
+    const btnRemove = parent.querySelector(".product__remove");
+    // Костыль
+    if (btnRemove) {
+      const parrent = e.target.closest("[data-parrent]");
 
-  const sizeIds = useSelector((state) => state.size.sizeId);
+      if (parrent) {
+        const parrentArr = parrent.querySelector('input[type="radio"]');
+        const parrentChecked = parrent.querySelector('input[type="radio"]:checked');
 
-  const add = (product) => {
-    onAddToCart({
-      title: product.title,
-      image: product.image,
-      price: product.price,
-      weight: product.weight,
-      name: product.name,
-      cartId: product.id,
-    });
+        if (parrentChecked) {
+          parrentChecked.checked = false;
+          parrentChecked.classList.remove("active");
+        }
+
+        parrentArr.checked = true;
+        parrentArr.classList.add("active");
+      }
+    }
   };
 
   return isLoad ? (
@@ -48,11 +75,16 @@ function Product({ productData, isLoad, onAddToCart, cart }) {
   ) : (
     <>
       {productData.map((product) => (
-        <li className="product__item" key={product.id}>
+        <li
+          className="product__item"
+          data-parrent
+          key={product.id}
+          id={product.id}
+        >
           <div className="product__box">
             <button
               type="button"
-              onClick={(e) => handleClick(e, product, product.id)}
+              onClick={(e) => handleClick(e, product)}
               className="product__link"
             >
               <img
@@ -72,44 +104,81 @@ function Product({ productData, isLoad, onAddToCart, cart }) {
                   <li className="product__size-item" key={index}>
                     <label className="product__label">
                       <input
-                        className="visually-hidden product__size-input"
+                        onChange={(e) => calcSize(e, product)}
+                        className={`visually-hidde product__size-input ${
+                          index === 0 && `active`
+                        }`}
                         type="radio"
                         name={product.title}
                         value={size}
                         defaultChecked={
                           index === 0 ||
-                          (product.id === sizeIds && size === sizeViews)
+                          cartProduct.find(
+                            (el) =>
+                              el.name === product.name &&
+                              el.cartId === product.id &&
+                              el.size === size
+                          )
                         }
                       />
-                      <span className="product__size">{size}</span>
+                      <span className="product__size">{arrSize[index]}</span>
                     </label>
                   </li>
                 ))}
             </ul>
             <div className="product__info">
               <div className="product__quantity">
-                <b className="product__price">{product.price} &#8381;</b>
+                <b className="product__price">
+                  <i className="product__price-num" data-price>
+                    {(cartProduct.find(
+                      (el) =>
+                        el.name === product.name && el.cartId === product.id
+                    ) &&
+                      product.price *
+                        cartProduct.find(
+                          (el) =>
+                            el.name === product.name && el.cartId === product.id
+                        ).size) ||
+                      product.price}
+                  </i>
+                  &#8381;
+                </b>
                 {product.weight && (
                   <span className="product__weight">
-                    <i className="product__weight-num">{product.weight}</i> г
+                    <i data-weight className="product__weight-num">
+                      {(cartProduct.find(
+                        (el) =>
+                          el.name === product.name && el.cartId === product.id
+                      ) &&
+                        product.weight *
+                          cartProduct.find(
+                            (el) =>
+                              el.name === product.name &&
+                              el.cartId === product.id
+                          ).size) ||
+                        product.weight}
+                    </i>
+                    г
                   </span>
                 )}
               </div>
               <button
-                onClick={() => add(product)}
+                data-btn
+                onClick={(e) => onAdd(e, product, onAddToCart)}
                 className={
-                  cart.find((el) => el.cartId === product.id)
+                  cartProduct.find(
+                    (el) => el.name === product.name && el.cartId === product.id
+                  )
                     ? "product__remove"
                     : "product__add"
                 }
                 type="button"
               >
-                {
-                  cart.find((el) => el.cartId === product.id)
-                    ? <IoMdCheckmark />
-                    : <FaPlus />
-                }
-               
+                {cartProduct.find((el) => el.cartId === product.id) ? (
+                  <IoMdCheckmark />
+                ) : (
+                  <FaPlus />
+                )}
               </button>
             </div>
           </div>
@@ -119,4 +188,4 @@ function Product({ productData, isLoad, onAddToCart, cart }) {
   );
 }
 
-export { Product };
+export { Product, arrSize, calcSize };

@@ -40,6 +40,10 @@
         cursor: pointer;
     }
 
+    &__price-num {
+        margin-right: 5px;
+    }
+
     &__size {
         display: block;
         background-color: #f1f1f1;
@@ -60,7 +64,7 @@
         width: 31%;
     }
 
-    &__size-input:checked + &__size {
+    &__size-input.active:checked + &__size {
         background-color: #e1e1e1;
         border: 1px solid #989898;
         cursor: default;
