@@ -4,17 +4,18 @@ import { IoIosClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import "./style.scss";
 
-function Cart({ elem, cart = [], onRemoveItem }) {
+function Cart({ elem, onRemoveItem }) {
   const { unLock } = bodyScroll;
-
+  const { cartProduct, totalPrice } = useSelector((state) => state.cart);
+  
   const closeCart = () => {
     unLock();
     elem.current.classList.remove("cart--active");
   };
 
-  const cartProduct = useSelector(
-    (state) => state.cart.cartProduct
-  );
+  const onRemove = (product) => {
+    onRemoveItem(product);
+  };
 
   return (
     <div className="cart" ref={elem}>
@@ -37,7 +38,7 @@ function Cart({ elem, cart = [], onRemoveItem }) {
               return (
                 <li className="order__item" key={product.id}>
                   <button
-                    onClick={() => onRemoveItem(product)}
+                    onClick={() => onRemove(product)}
                     type="button"
                     className="order__remove-btn"
                   >
@@ -54,21 +55,6 @@ function Cart({ elem, cart = [], onRemoveItem }) {
                   <div className="order__details">
                     <div className="order__header">
                       <b className="order__title">{product.title}</b>
-                      <div className="order__quantity-inner">
-                        <button
-                          className="order__btn order__btn--plus"
-                          type="button"
-                        >
-                          -
-                        </button>
-                        <span className="order__btn order__quantity">x1</span>
-                        <button
-                          className="order__btn order__btn--minus"
-                          type="button"
-                        >
-                          +
-                        </button>
-                      </div>
                     </div>
                     <span className="order__total">{product.price} руб</span>
                   </div>
@@ -78,7 +64,7 @@ function Cart({ elem, cart = [], onRemoveItem }) {
           </ul>
           <div className="cart__full-price">
             <b className="cart__total">Итого:</b>
-            <span className="cart__total-price">499 руб</span>
+            <span className="cart__total-price">{totalPrice} руб</span>
           </div>
         </div>
         <div className="cart__contacts"></div>

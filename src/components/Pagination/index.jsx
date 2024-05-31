@@ -2,15 +2,22 @@ import React from "react";
 import ReactPaginate from "react-paginate";
 import "./style.scss";
 
-function Pagination({ onChangePage, limit }) {
+function Pagination({ onChangePage, total, limit }) {
+  const pagesCount = Math.ceil(total / limit);
+
+  const onChangeList = (number) => {
+    onChangePage(number.selected + 1);
+    window.scrollTo(0, 0);
+  }
+
   return (
     <ReactPaginate
       className="pagination"
       breakLabel="..."
       nextLabel=">"
-      onPageChange={(number) => onChangePage(number.selected + 1)}
+      onPageChange={onChangeList}
       pageRangeDisplayed={4}
-      pageCount={parseInt(37 / limit)}
+      pageCount={pagesCount}
       previousLabel="<"
       renderOnZeroPageCount={null}
     />

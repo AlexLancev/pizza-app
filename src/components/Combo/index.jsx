@@ -3,11 +3,14 @@ import axios from "axios";
 import { List } from "../List";
 import { useSelector } from "react-redux";
 import { Pagination } from "../Pagination";
+import { useDispatch } from "react-redux";
+import { currentProduct } from "../../redux/currentProductList/reducer";
 
-function Combo({ onAddToCart, cart }) {
-  const [productData, setProductData] = useState([]);
+function Combo({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
   const [pageCurrent, setPageCurrent] = useState(1);
+  const [allProducts, setAllProducts] = useState([]);
+  const dispatch = useDispatch();
   const limit = 12;
 
   const [sortType, setSortType] = useState({
@@ -26,34 +29,44 @@ function Combo({ onAddToCart, cart }) {
     setIsLoad(true);
     axios
       .get(
-        `https://661fb10916358961cd952913.mockapi.io/combo?&sortBy=${sortBy}&order=${order}${search}&page=${pageCurrent}&limit=${limit}`
+        `https://661fb10916358961cd952913.mockapi.io/combo?&sortBy=${sortBy}&order=${order}${search}`
       )
       .then((response) => {
-        setProductData(response.data);
+        setAllProducts(response.data);
         setIsLoad(false);
       })
       .catch((error) => {
         console.error("Ошибка получения данных: ", error);
       });
     window.scrollTo(0, 0);
-  }, [sortBy, order, search, pageCurrent]);
+  }, [sortBy, order, search, dispatch]);
+
+  useEffect(() => {
+    const currentPageProducts = allProducts.slice(
+      (pageCurrent - 1) * limit,
+      pageCurrent * limit
+    );
+    dispatch(currentProduct(currentPageProducts));
+  }, [allProducts, pageCurrent, dispatch, limit]);
 
   return (
     <div className="container">
-      <List
+       <List
         value={sortType}
         onChangeSort={(i) => setSortType(i)}
-        productData={productData}
         isLoad={isLoad}
         onAddToCart={onAddToCart}
-        cart={cart}
       />
-      <Pagination
-        limit={limit}
-        onChangePage={(number) => setPageCurrent(number)}
-      />
+      {allProducts.length > limit && (
+        <Pagination
+          limit={limit}
+          total={allProducts.length}
+          onChangePage={(number) => setPageCurrent(number)}
+        />
+      )}
     </div>
   );
 }
 
 export { Combo };
+

@@ -69,6 +69,18 @@
         border: 1px solid #989898;
         cursor: default;
     }
+    
+    // &__size-input.active &__size:hover {
+    //     background-color: #e1e1e1;
+    //     border: 1px solid #989898;
+    //     cursor: default;
+    // }
+    // &__size-input:disabled + &__size:hover {
+    //     background-color: #f1f1f1;
+    //     border: 1px solid #dedede;
+    //     cursor: default;
+    // }
+
 
     &__size-input:focus-visible + &__size {
         border: 1px solid #000000;

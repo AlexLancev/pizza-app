@@ -42,7 +42,13 @@ function App() {
         (item) => Number(item.cartId) === Number(obj.cartId)
       );
       if (findItem) {
-        dispatch(cartShow(cartProduct.filter((item) => Number(item.cartId) !== Number(obj.cartId))));
+        dispatch(
+          cartShow(
+            cartProduct.filter(
+              (item) => Number(item.cartId) !== Number(obj.cartId)
+            )
+          )
+        );
         await axios.delete(
           `https://6639ca471ae792804becc79a.mockapi.io/cart/${findItem.id}`
         );
@@ -74,47 +80,43 @@ function App() {
       axios.delete(
         `https://6639ca471ae792804becc79a.mockapi.io/cart/${product.id}`
       );
-      dispatch(cartShow(cartProduct.filter((item) => Number(item.id) !== Number(product.id))
-      ))
+      dispatch(
+        cartShow(
+          cartProduct.filter((item) => Number(item.id) !== Number(product.id))
+        )
+      );
     } catch (error) {
       alert("Ошибка при удалении из корзины");
       console.error(error);
     }
   };
 
-  const cartProduct = useSelector(
-    (state) => state.cart.cartProduct
-  );
+  const cartProduct = useSelector((state) => state.cart.cartProduct);
 
   return (
-      <Routes>
+    <Routes>
+      <Route
+        path="/"
+        element={<Layout cart={cartProduct} onRemoveItem={onRemoveItem} />}
+      >
+        <Route path="Pizza" element={<Pizza onAddToCart={onAddToCart} />} />
+        <Route path="Combo" element={<Combo onAddToCart={onAddToCart} />} />
+        <Route path="Upsters" element={<Upsters onAddToCart={onAddToCart} />} />
+        <Route path="Snacks" element={<Snacks onAddToCart={onAddToCart} />} />
         <Route
-          path="/"
-          element={<Layout cart={cartProduct} onRemoveItem={onRemoveItem} />}
-        >
-          <Route
-            path="Pizza"
-            element={<Pizza onAddToCart={onAddToCart} cart={cartProduct} />}
-          />
-          <Route
-            path="Combo"
-            element={<Combo onAddToCart={onAddToCart} cart={cartProduct} />}
-          />
-          <Route path="Upsters" element={<Upsters />} />
-          <Route path="Snacks" element={<Snacks />} />
-          <Route path="Beverages" element={<Beverages />} />
-          <Route path="Dessert" element={<Dessert />} />
-          <Route path="Sauces" element={<Sauces />} />
-          <Route path="Stock" element={<Stock />} />
-          <Route
-            path="/:title"
-            element={
-              <Presentation onAddToCart={onAddToCart} cart={cartProduct} />
-            }
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+          path="Beverages"
+          element={<Beverages onAddToCart={onAddToCart} />}
+        />
+        <Route path="Dessert" element={<Dessert onAddToCart={onAddToCart} />} />
+        <Route path="Sauces" element={<Sauces onAddToCart={onAddToCart} />} />
+        <Route path="Stock" element={<Stock />} />
+        <Route
+          path="/:title"
+          element={<Presentation onAddToCart={onAddToCart} />}
+        />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 
