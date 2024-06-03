@@ -41,7 +41,7 @@ function Presentation({ onAddToCart }) {
           <img
             width={400}
             height={400}
-            src={`pizza-app/${image}`}
+            src={image}
             alt={title}
             title={title}
             className="presentation__image"
@@ -49,7 +49,7 @@ function Presentation({ onAddToCart }) {
           <div className="presentation__info" data-parrent>
             <div className="presentation__home">
               <Link
-                to={`/pizza-app/${category}`}
+                to={`/${category}`}
                 className="presentation__link-home"
                 title="Вернутся на главную страницу"
               >

@@ -21,7 +21,7 @@ function Category() {
           <li className="category__item" key={index}>
             <Link
               className="category__link"
-              to={`pizza-app/${cat[1]}`}
+              to={`/${cat[1]}`}
             >
               {cat[0]}
             </Link>

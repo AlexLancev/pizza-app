@@ -1,7 +1,6 @@
 {
   "name": "pizza",
   "version": "0.1.0",
-  "homepage": "https://alexlancev.github.io/pizza-app/",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.4.2",
