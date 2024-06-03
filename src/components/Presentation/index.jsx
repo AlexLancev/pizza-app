@@ -4,7 +4,6 @@ import { IoIosArrowBack } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { IoMdCheckmark } from "react-icons/io";
 import { arrSize } from "../Product";
-import { calcSize } from "../../utlis/calcPizza";
 import { add } from "../../utlis/addProduct";
 import { useSelector } from "react-redux";
 
