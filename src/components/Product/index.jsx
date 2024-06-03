@@ -22,7 +22,7 @@ function Product({ isLoad, onAddToCart }) {
       current: activeSizes[product.id] || 0,
     };
     localStorage.setItem("product", JSON.stringify(productObj));
-    navigate(`/${product.title}`);
+    navigate(`pizza-app/${product.title}`);
     window.scrollTo(0, 0);
   };
 

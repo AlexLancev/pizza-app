@@ -97,23 +97,23 @@ function App() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="pizza-app/"
         element={<Layout cart={cartProduct} onRemoveItem={onRemoveItem} />}
       >
-        <Route path="Pizza" element={<Pizza onAddToCart={onAddToCart} />} />
-        <Route path="Combo" element={<Combo onAddToCart={onAddToCart} />} />
-        <Route path="Upsters" element={<Upsters onAddToCart={onAddToCart} />} />
-        <Route path="Snacks" element={<Snacks onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Pizza" element={<Pizza onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Combo" element={<Combo onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Upsters" element={<Upsters onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Snacks" element={<Snacks onAddToCart={onAddToCart} />} />
         <Route
-          path="Beverages"
+          path="pizza-app/Beverages"
           element={<Beverages onAddToCart={onAddToCart} />}
         />
-        <Route path="Dessert" element={<Dessert onAddToCart={onAddToCart} />} />
-        <Route path="Sauces" element={<Sauces onAddToCart={onAddToCart} />} />
-        <Route path="Stock" element={<Stock />} />
-        <Route path="Delivery" element={<Delivery />} />
+        <Route path="pizza-app/Dessert" element={<Dessert onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Sauces" element={<Sauces onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Stock" element={<Stock />} />
+        <Route path="pizza-app/Delivery" element={<Delivery />} />
         <Route
-          path="/:title"
+          path="pizza-app/:title"
           element={<Presentation onAddToCart={onAddToCart} />}
         />
         <Route path="*" element={<NotFoundPage />} />
