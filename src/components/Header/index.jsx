@@ -23,11 +23,11 @@ function Header({ cart, onRemoveItem }) {
     <header className="header">
       <div className="container">
         <div className="header__inner">
-          <a href="/pizza" className="logo">
+          <a href="pizza-app/pizza" className="logo">
             <img
               width={130}
               height={100}
-              src="/img/logo-full.png"
+              src="pizza-app/img/logo-full.png"
               alt="Логотип пиццерии Pizza App"
             />
           </a>
