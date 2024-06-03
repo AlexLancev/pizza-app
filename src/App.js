@@ -100,8 +100,8 @@ function App() {
         path="/"
         element={<Layout cart={cartProduct} onRemoveItem={onRemoveItem} />}
       >
-        <Route path="Pizza" element={<Pizza onAddToCart={onAddToCart} />} />
-        <Route path="Combo" element={<Combo onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Pizza" element={<Pizza onAddToCart={onAddToCart} />} />
+        <Route path="pizza-app/Combo" element={<Combo onAddToCart={onAddToCart} />} />
         <Route path="Upsters" element={<Upsters onAddToCart={onAddToCart} />} />
         <Route path="Snacks" element={<Snacks onAddToCart={onAddToCart} />} />
         <Route
