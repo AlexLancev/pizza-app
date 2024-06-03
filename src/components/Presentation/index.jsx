@@ -77,7 +77,7 @@ function Presentation({ onAddToCart }) {
                     <label className="product__label">
                       <input
                         onChange={handleSizeChange}
-                        className={`visually-hidde product__size-input ${
+                        className={`visually-hidden product__size-input ${
                           (inCart && index === inCart.sizes) || index === activeSize ? "active" : ""
                         }`}
                         type="radio"

@@ -13,6 +13,7 @@ import { NotFoundPage } from "./components/NotFoundPage";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Stock } from "./components/Stock";
+import { Delivery } from "./components/Delivery";
 import { cartShow } from "./redux/cart/reducer";
 import axios from "axios";
 
@@ -110,6 +111,7 @@ function App() {
         <Route path="Dessert" element={<Dessert onAddToCart={onAddToCart} />} />
         <Route path="Sauces" element={<Sauces onAddToCart={onAddToCart} />} />
         <Route path="Stock" element={<Stock />} />
+        <Route path="Delivery" element={<Delivery />} />
         <Route
           path="/:title"
           element={<Presentation onAddToCart={onAddToCart} />}

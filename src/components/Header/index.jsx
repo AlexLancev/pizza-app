@@ -23,7 +23,7 @@ function Header({ cart, onRemoveItem }) {
     <header className="header">
       <div className="container">
         <div className="header__inner">
-          <a href="/" className="logo">
+          <a href="/pizza" className="logo">
             <img
               width={130}
               height={100}

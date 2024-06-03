@@ -61,6 +61,7 @@ function Product({ isLoad, onAddToCart }) {
                   height={290}
                   alt={product.title}
                   title={product.title}
+                  loading="lazy"
                 />
                 <h3 className="product__heading">{product.title}</h3>
                 <p className="product__description">{product.description}</p>
@@ -73,7 +74,7 @@ function Product({ isLoad, onAddToCart }) {
                         <input
                           onChange={(e) => sizeChange(e, product.id)}
                           checked={inCart ? index === inCart.sizes : index === activeSize}
-                          className={`visually-hidde product__size-input ${
+                          className={`visually-hidden product__size-input ${
                             (inCart && index === inCart.sizes) || index === activeSize ? "active" : ""
                           }`}
                           type="radio"

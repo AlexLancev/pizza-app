@@ -2,12 +2,13 @@ import React from "react";
 import { bodyScroll } from "../../utlis/body-scroll";
 import { IoIosClose } from "react-icons/io";
 import { useSelector } from "react-redux";
+import { Form } from "../Form";
 import "./style.scss";
 
 function Cart({ elem, onRemoveItem }) {
   const { unLock } = bodyScroll;
   const { cartProduct, totalPrice } = useSelector((state) => state.cart);
-  
+
   const closeCart = () => {
     unLock();
     elem.current.classList.remove("cart--active");
@@ -30,9 +31,11 @@ function Cart({ elem, onRemoveItem }) {
       <div className="cart__inner">
         <div className="cart__order">
           <b className="cart__title">Состав заказа</b>
-          <p className="cart__text visually-hidden">
-            Для совершения заказа, добавьте что-нибудь в корзину
-          </p>
+          {cartProduct.length < 1 && (
+            <p className="cart__text">
+              Для совершения заказа, добавьте что-нибудь в корзину
+            </p>
+          )}
           <ul className="order">
             {cartProduct.map((product) => {
               return (
@@ -62,12 +65,14 @@ function Cart({ elem, onRemoveItem }) {
               );
             })}
           </ul>
-          <div className="cart__full-price">
-            <b className="cart__total">Итого:</b>
-            <span className="cart__total-price">{totalPrice} руб</span>
-          </div>
+          {cartProduct.length > 0 && (
+            <div className="cart__full-price">
+              <b className="cart__total">Итого:</b>
+              <span className="cart__total-price">{totalPrice} руб</span>
+            </div>
+          )}
         </div>
-        <div className="cart__contacts"></div>
+        {cartProduct.length > 0 && <Form />}
       </div>
     </div>
   );
