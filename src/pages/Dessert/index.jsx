@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { List } from "../List";
+import { List } from "../../components/List";
 import { useSelector } from "react-redux";
-import { Pagination } from "../Pagination";
+import { Pagination } from "../../components/Pagination";
 import { useDispatch } from "react-redux";
 import { currentProduct } from "../../redux/currentProductList/reducer";
+const API_KEY_DESSERT = process.env.REACT_APP_API_KEY_DESSERT;
 
-function Combo({ onAddToCart }) {
+function Dessert({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
   const [pageCurrent, setPageCurrent] = useState(1);
   const [allProducts, setAllProducts] = useState([]);
@@ -29,7 +30,7 @@ function Combo({ onAddToCart }) {
     setIsLoad(true);
     axios
       .get(
-        `https://661fb10916358961cd952913.mockapi.io/combo?&sortBy=${sortBy}&order=${order}${search}`
+        `https://${API_KEY_DESSERT}.mockapi.io/dessert?&sortBy=${sortBy}&order=${order}${search}`
       )
       .then((response) => {
         setAllProducts(response.data);
@@ -68,5 +69,5 @@ function Combo({ onAddToCart }) {
   );
 }
 
-export { Combo };
+export { Dessert };
 

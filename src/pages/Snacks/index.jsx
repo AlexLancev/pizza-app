@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { List } from "../List";
-import { useSelector, useDispatch } from "react-redux";
-import { Pagination } from "../Pagination";
-import { currentProduct } from "../../redux/currentProductList/reducer";
 import axios from "axios";
+import { List } from "../../components/List";
+import { useSelector } from "react-redux";
+import { Pagination } from "../../components/Pagination";
+import { useDispatch } from "react-redux";
+import { currentProduct } from "../../redux/currentProductList/reducer";
+const API_KEY_SNACKS = process.env.REACT_APP_API_KEY_SNACKS;
 
-function Pizza({ onAddToCart }) {
+function Snacks({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
   const [pageCurrent, setPageCurrent] = useState(1);
   const [allProducts, setAllProducts] = useState([]);
@@ -16,17 +18,19 @@ function Pizza({ onAddToCart }) {
     name: "Цене ( DESC )",
     sortProperty: "price",
   });
+
   const sortBy = sortType.sortProperty.replace("-", "");
   const order = sortType.sortProperty.includes("-") ? "asc" : "desc";
 
   const searchProduct = useSelector((state) => state.search.searchProduct);
+
   const search = searchProduct ? `&search=${searchProduct}` : "";
 
   useEffect(() => {
     setIsLoad(true);
     axios
       .get(
-        `https://661fb10916358961cd952913.mockapi.io/pizza?&sortBy=${sortBy}&order=${order}${search}`
+        `https://${API_KEY_SNACKS}.mockapi.io/snacks?&sortBy=${sortBy}&order=${order}${search}`
       )
       .then((response) => {
         setAllProducts(response.data);
@@ -48,7 +52,7 @@ function Pizza({ onAddToCart }) {
 
   return (
     <div className="container">
-      <List
+       <List
         value={sortType}
         onChangeSort={(i) => setSortType(i)}
         isLoad={isLoad}
@@ -65,4 +69,5 @@ function Pizza({ onAddToCart }) {
   );
 }
 
-export { Pizza };
+export { Snacks };
+

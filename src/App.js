@@ -1,21 +1,22 @@
 import React from "react";
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
-import { Layout } from "./components/Layout";
-import { Pizza } from "./components/Pizza";
-import { Combo } from "./components/Combo";
-import { Upsters } from "./components/Upsters";
-import { Snacks } from "./components/Snacks";
-import { Beverages } from "./components/Beverages";
-import { Dessert } from "./components/Dessert";
-import { Sauces } from "./components/Sauces";
-import { Presentation } from "./components/Presentation";
-import { NotFoundPage } from "./components/NotFoundPage";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Stock } from "./components/Stock";
-import { Delivery } from "./components/Delivery";
+import { Layout } from "./components/Layout";
+import { Pizza } from "./pages/Pizza";
+import { Combo } from "./pages/Combo";
+import { Upsters } from "./pages/Upsters";
+import { Snacks } from "./pages/Snacks";
+import { Beverages } from "./pages/Beverages";
+import { Dessert } from "./pages/Dessert";
+import { Sauces } from "./pages/Sauces";
+import { Presentation } from "./components/Presentation";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import { Stock } from "./pages/Stock";
+import { Delivery } from "./pages/Delivery";
 import { cartShow } from "./redux/cart/reducer";
-import axios from "axios";
+const API_KEY_CART = process.env.REACT_APP_API_KEY_CART;
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function App() {
     async function fetchData() {
       try {
         const [cartResponse] = await Promise.all([
-          axios.get("https://6639ca471ae792804becc79a.mockapi.io/cart"),
+          axios.get(`https://${API_KEY_CART}.mockapi.io/cart`),
         ]);
 
         dispatch(cartShow(cartResponse.data));
@@ -50,25 +51,13 @@ function App() {
             )
           )
         );
-        await axios.delete(
-          `https://6639ca471ae792804becc79a.mockapi.io/cart/${findItem.id}`
-        );
+        await axios.delete(`https://${API_KEY_CART}.mockapi.io/cart/${findItem.id}`);
       } else {
         const { data } = await axios.post(
-          `https://6639ca471ae792804becc79a.mockapi.io/cart/`,
+          `https://${API_KEY_CART}.mockapi.io/cart/`,
           obj
         );
         dispatch(cartShow([...cartProduct, data]));
-
-        // dispatch(cartShow(cartProduct.map((item) => {
-        //     if (item.id === data.id) {
-        //       return {
-        //         ...item,
-        //         id: data.id,
-        //       };
-        //     }
-        //     return item;
-        //   })))
       }
     } catch (error) {
       console.log("Ошибка при добавлении в корзину");
@@ -78,9 +67,7 @@ function App() {
 
   const onRemoveItem = (product) => {
     try {
-      axios.delete(
-        `https://6639ca471ae792804becc79a.mockapi.io/cart/${product.id}`
-      );
+      axios.delete(`https://${API_KEY_CART}.mockapi.io/cart/${product.id}`);
       dispatch(
         cartShow(
           cartProduct.filter((item) => Number(item.id) !== Number(product.id))

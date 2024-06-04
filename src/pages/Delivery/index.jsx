@@ -1,4 +1,4 @@
-import { DeliveryMap } from "../DeliveryMap";
+import { DeliveryMap } from "../../components/DeliveryMap";
 
 import "./style.scss";
 

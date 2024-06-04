@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { List } from "../List";
+import { List } from "../../components/List";
 import { useSelector } from "react-redux";
-import { Pagination } from "../Pagination";
+import { Pagination } from "../../components/Pagination";
 import { useDispatch } from "react-redux";
 import { currentProduct } from "../../redux/currentProductList/reducer";
+const API_KEY_BEVERAGES = process.env.REACT_APP_API_KEY_BEVERAGES;
 
-function Snacks({ onAddToCart }) {
+function Beverages({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
   const [pageCurrent, setPageCurrent] = useState(1);
   const [allProducts, setAllProducts] = useState([]);
   const dispatch = useDispatch();
   const limit = 12;
-
+  
   const [sortType, setSortType] = useState({
     name: "Цене ( DESC )",
     sortProperty: "price",
@@ -29,7 +30,7 @@ function Snacks({ onAddToCart }) {
     setIsLoad(true);
     axios
       .get(
-        `https://661fb30516358961cd95314b.mockapi.io/snacks?&sortBy=${sortBy}&order=${order}${search}`
+        `https://${API_KEY_BEVERAGES}.mockapi.io/beverages?&sortBy=${sortBy}&order=${order}${search}`
       )
       .then((response) => {
         setAllProducts(response.data);
@@ -68,5 +69,5 @@ function Snacks({ onAddToCart }) {
   );
 }
 
-export { Snacks };
+export { Beverages };
 

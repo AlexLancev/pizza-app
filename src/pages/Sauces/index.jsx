@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { List } from "../List";
+import { List } from "../../components/List";
 import { useSelector } from "react-redux";
-import { Pagination } from "../Pagination";
+import { Pagination } from "../../components/Pagination";
 import { useDispatch } from "react-redux";
 import { currentProduct } from "../../redux/currentProductList/reducer";
+const API_KEY_SAUCES = process.env.REACT_APP_API_KEY_SAUCES;
 
-function Upsters({ onAddToCart }) {
+function Sauces({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
   const [pageCurrent, setPageCurrent] = useState(1);
   const [allProducts, setAllProducts] = useState([]);
@@ -29,7 +30,7 @@ function Upsters({ onAddToCart }) {
     setIsLoad(true);
     axios
       .get(
-        `https://661fb30516358961cd95314b.mockapi.io/upsters?&sortBy=${sortBy}&order=${order}${search}`
+        `https://${API_KEY_SAUCES}.mockapi.io/sauces?&sortBy=${sortBy}&order=${order}${search}`
       )
       .then((response) => {
         setAllProducts(response.data);
@@ -68,5 +69,5 @@ function Upsters({ onAddToCart }) {
   );
 }
 
-export { Upsters };
+export { Sauces };
 
