@@ -22,7 +22,7 @@ function Combo({ onAddToCart }) {
   const sortBy = sortType.sortProperty.replace("-", "");
   const order = sortType.sortProperty.includes("-") ? "asc" : "desc";
 
-  const searchProduct = useSelector((state) => state.search.searchProduct);
+  const { searchProduct } = useSelector((state) => state.search);
 
   const search = searchProduct ? `&search=${searchProduct}` : "";
 

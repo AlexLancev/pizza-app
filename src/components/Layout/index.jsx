@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
 
-function Layout({ cart, onRemoveItem }) {
+function Layout({ onRemoveItem }) {
   return (
     <>
-      <Header cart={cart} onRemoveItem={onRemoveItem} />
+      <Header onRemoveItem={onRemoveItem} />
       <main className="main">
         <Outlet />
       </main>

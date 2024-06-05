@@ -4,9 +4,11 @@ import { Cart } from "../Cart";
 import { bodyScroll } from "../../utlis/body-scroll";
 import { Search } from "../Search";
 import { IoCartOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 import "./style.scss";
 
-function Header({ cart, onRemoveItem }) {
+function Header({ onRemoveItem }) {
+  const { cartProduct } = useSelector((state) => state.cart);
   const { lock } = bodyScroll;
   const elem = React.useRef(null);
 
@@ -41,10 +43,10 @@ function Header({ cart, onRemoveItem }) {
               aria-label="Открыть корзину товаров"
             >
               <IoCartOutline size={40} className="cart-btn__icon" />
-              <span className="cart-btn__quantity">{cart.length}</span>
+              <span className="cart-btn__quantity">{cartProduct.length}</span>
             </button>
           </div>
-          <Cart onRemoveItem={onRemoveItem} cart={cart} elem={elem} />
+          <Cart onRemoveItem={onRemoveItem} elem={elem} />
         </div>
         <Category />
       </div>

@@ -8,6 +8,7 @@ const API_KEY_PIZZA = process.env.REACT_APP_API_KEY_PIZZA;
 
 function Pizza({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
+  const [isError, setError] = useState(false);
   const [pageCurrent, setPageCurrent] = useState(1);
   const [allProducts, setAllProducts] = useState([]);
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function Pizza({ onAddToCart }) {
   const sortBy = sortType.sortProperty.replace("-", "");
   const order = sortType.sortProperty.includes("-") ? "asc" : "desc";
 
-  const searchProduct = useSelector((state) => state.search.searchProduct);
+  const { searchProduct } = useSelector((state) => state.search);
   const search = searchProduct ? `&search=${searchProduct}` : "";
 
   useEffect(() => {
@@ -32,9 +33,11 @@ function Pizza({ onAddToCart }) {
       .then((response) => {
         setAllProducts(response.data);
         setIsLoad(false);
+        setError(false);
       })
       .catch((error) => {
         console.error("Ошибка получения данных: ", error);
+        setError(true);
       });
     window.scrollTo(0, 0);
   }, [sortBy, order, search, dispatch]);
@@ -53,6 +56,7 @@ function Pizza({ onAddToCart }) {
         value={sortType}
         onChangeSort={(i) => setSortType(i)}
         isLoad={isLoad}
+        isError={isError}
         onAddToCart={onAddToCart}
       />
       {allProducts.length > limit && (

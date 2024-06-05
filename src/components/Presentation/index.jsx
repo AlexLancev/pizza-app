@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import "./style.scss";
 
 function Presentation({ onAddToCart }) {
-  const cartProduct = useSelector((state) => state.cart.cartProduct);
+  const { cartProduct } = useSelector((state) => state.cart);
   const currentProduct = JSON.parse(localStorage.getItem("product"));
   const [activeSize, setActiveSize] = useState(
     currentProduct && currentProduct.current ? currentProduct.current : 0

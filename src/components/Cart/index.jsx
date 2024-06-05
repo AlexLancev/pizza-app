@@ -3,6 +3,7 @@ import { bodyScroll } from "../../utlis/body-scroll";
 import { IoIosClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { Form } from "../Form";
+import { CartItem } from "../CartItem";
 import "./style.scss";
 
 function Cart({ elem, onRemoveItem }) {
@@ -12,10 +13,6 @@ function Cart({ elem, onRemoveItem }) {
   const closeCart = () => {
     unLock();
     elem.current.classList.remove("cart--active");
-  };
-
-  const onRemove = (product) => {
-    onRemoveItem(product);
   };
 
   return (
@@ -36,35 +33,7 @@ function Cart({ elem, onRemoveItem }) {
               Для совершения заказа, добавьте что-нибудь в корзину
             </p>
           )}
-          <ul className="order">
-            {cartProduct.map((product) => {
-              return (
-                <li className="order__item" key={product.id}>
-                  <button
-                    onClick={() => onRemove(product)}
-                    type="button"
-                    className="order__remove-btn"
-                  >
-                    <IoIosClose className="order__lock-icon" size={20} />
-                  </button>
-                  <img
-                    width={120}
-                    height={120}
-                    src={product.image}
-                    alt={product.title}
-                    title={product.title}
-                    className="order__image"
-                  />
-                  <div className="order__details">
-                    <div className="order__header">
-                      <b className="order__title">{product.title}</b>
-                    </div>
-                    <span className="order__total">{product.price} руб</span>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+          <CartItem onRemoveItem={onRemoveItem} />
           {cartProduct.length > 0 && (
             <div className="cart__full-price">
               <b className="cart__total">Итого:</b>

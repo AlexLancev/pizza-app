@@ -19,6 +19,7 @@ import { cartShow } from "./redux/cart/reducer";
 const API_KEY_CART = process.env.REACT_APP_API_KEY_CART;
 
 function App() {
+  const { cartProduct } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -41,7 +42,8 @@ function App() {
   const onAddToCart = async (obj) => {
     try {
       const findItem = cartProduct.find(
-        (item) => Number(item.cartId) === Number(obj.cartId)
+        (item) =>
+          item.name === obj.name && Number(item.cartId) === Number(obj.cartId)
       );
       if (findItem) {
         dispatch(
@@ -51,7 +53,9 @@ function App() {
             )
           )
         );
-        await axios.delete(`https://${API_KEY_CART}.mockapi.io/cart/${findItem.id}`);
+        await axios.delete(
+          `https://${API_KEY_CART}.mockapi.io/cart/${findItem.id}`
+        );
       } else {
         const { data } = await axios.post(
           `https://${API_KEY_CART}.mockapi.io/cart/`,
@@ -79,13 +83,11 @@ function App() {
     }
   };
 
-  const cartProduct = useSelector((state) => state.cart.cartProduct);
-
   return (
     <Routes>
       <Route
         path="/"
-        element={<Layout cart={cartProduct} onRemoveItem={onRemoveItem} />}
+        element={<Layout onRemoveItem={onRemoveItem} />}
       >
         <Route path="Pizza" element={<Pizza onAddToCart={onAddToCart} />} />
         <Route path="Combo" element={<Combo onAddToCart={onAddToCart} />} />
