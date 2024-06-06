@@ -59,7 +59,7 @@ function Pizza({ onAddToCart }) {
         isError={isError}
         onAddToCart={onAddToCart}
       />
-      {allProducts.length > limit && (
+      {!isError && allProducts.length > limit && (
         <Pagination
           limit={limit}
           total={allProducts.length}
