@@ -1,0 +1,36 @@
+.category {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        display: flex;
+        flex: 0 1 100%;
+        position: relative;
+
+        &:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            border-radius: 100%;
+            background-color: #dfdfdf;
+        }
+    }
+
+    &__link {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        color: #616161;
+        text-align: center;
+        padding: 10px 15px;
+        transition: 0.3s all;
+
+        &:hover {
+            color: #000000;
+        }
+    }
+}

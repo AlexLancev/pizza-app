@@ -1,0 +1,27 @@
+.delivery {
+    padding: 70px 0 0;
+
+    &__head {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    &__list {
+        margin-bottom: 40px;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &__box-time {
+        margin-bottom: 40px;
+    }
+
+    &__time {
+        display: block;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

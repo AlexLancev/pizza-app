@@ -1,0 +1,1000 @@
+{
+    "pizza": [
+        {
+            "category": "pizza",
+            "id": 1,
+            "name": "Пицца",
+            "image": "/img/pizza/1.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Юра, мы всё пропекали",
+            "description": "Бекон, сыр чеддар, сыр моцарелла, соус на основе вишни, сливочный соус, кунжут, паприка копченая",
+            "price": 499,
+            "weight": 703
+        },
+        {
+            "category": "pizza",
+            "id": 2,
+            "name": "Пицца",
+            "image": "/img/pizza/2.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Том кха с курицей",
+            "description": "Запеченная куриная грудка, маринованные шампиньоны, томаты, моцарелла, соус сливочный том ям, зеленый лук",
+            "price": 499,
+            "weight": 632
+        },
+        {
+            "category": "pizza",
+            "id": 3,
+            "name": "Пицца",
+            "image": "/img/pizza/3.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Кантри",
+            "description": "Буженина, запеченная куриная грудка, томаты, картофельные дольки фри, моцарелла, соус ранч, чесночный соус, криспи лук, зеленый лук",
+            "price": 499,
+            "weight": 742
+        },
+        {
+            "category": "pizza",
+            "id": 4,
+            "name": "Пицца",
+            "image": "/img/pizza/4.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Грузинская",
+            "description": "Запеченная куриная грудка, бекон, томаты, красный лук, моцарелла, фирменный томатный соус, кинза, грецкий орех, хмели-сунели",
+            "price": 499,
+            "weight": 624
+        },
+        {
+            "category": "pizza",
+            "id": 5,
+            "name": "Пицца",
+            "image": "/img/pizza/5.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Супер мясная",
+            "description": "Сервелат, ветчина, запеченная куриная грудка, бекон, моцарелла, фирменный томатный соус",
+            "price": 499,
+            "weight": 627
+        },
+        {
+            "category": "pizza",
+            "id": 6,
+            "name": "Пицца",
+            "image": "/img/pizza/6.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Дьябло",
+            "description": "Чоризо, пепперони, перец халапеньо, моцарелла, фирменный томатный соус",
+            "price": 499,
+            "weight": 662
+        },
+        {
+            "category": "pizza",
+            "id": 7,
+            "name": "Пицца",
+            "image": "/img/pizza/7.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Хот-дог",
+            "description": "Ветчина, охотничьи колбаски, маринованные огурцы, соус горчичный, фирменный томатный соус, моцарелла, криспи лук",
+            "price": 499,
+            "weight": 625
+        },
+        {
+            "category": "pizza",
+            "id": 8,
+            "name": "Пицца",
+            "image": "/img/pizza/8.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Криспи жюльен",
+            "description": "Запеченная куриная грудка, маринованные шампиньоны, моцарелла, жареный лук, красный лук, соус блю чиз",
+            "price": 499,
+            "weight": 652
+        },
+        {
+            "category": "pizza",
+            "id": 9,
+            "name": "Пицца",
+            "image": "/img/pizza/9.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Макс Тейсти",
+            "description": "Сервелат, запеченная куриная грудка, ветчина, томаты, маринованные огурцы, красный лук, моцарелла",
+            "price": 499,
+            "weight": 684
+        },
+        {
+            "category": "pizza",
+            "id": 10,
+            "name": "Пицца",
+            "image": "/img/pizza/10.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Итальянская",
+            "description": "Сервелат, ветчина, пепперони, болгарский перец, томаты, маслины, чеддер, моцарелла, фирменный томатный соус",
+            "price": 399,
+            "weight": 596
+        },
+        {
+            "category": "pizza",
+            "id": 11,
+            "name": "Пицца",
+            "image": "/img/pizza/11.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Курица с ананасами",
+            "description": "Запеченная куриная грудка, ананасы, моцарелла, сливочно-томатный соус",
+            "price": 399,
+            "weight": 652
+        },
+        {
+            "category": "pizza",
+            "id": 12,
+            "name": "Пицца",
+            "image": "/img/pizza/12.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Ветчина и грибы",
+            "description": "Ветчина, шампиньоны маринованые, томаты, моцарелла, сливочный соус",
+            "price": 399,
+            "weight": 600
+        },
+        {
+            "category": "pizza",
+            "id": 13,
+            "name": "Пицца",
+            "image": "/img/pizza/13.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Колбасная пицца",
+            "description": "Сервелат, маринованные огурцы, болгарский перец, чеддер, моцарелла, фирменный томатный соус",
+            "price": 399,
+            "weight": 642
+        },
+        {
+            "category": "pizza",
+            "id": 14,
+            "name": "Пицца",
+            "image": "/img/pizza/14.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Пепперони",
+            "description": "Пепперони, моцарелла, фирменный томатный соус",
+            "price": 399,
+            "weight": 592
+        },
+        {
+            "category": "pizza",
+            "id": 15,
+            "name": "Пицца",
+            "image": "/img/pizza/15.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Сырный цыплёнок",
+            "description": "Запеченная куриная грудка, моцарелла, томаты, сырный соус",
+            "price": 399,
+            "weight": 567
+        },
+        {
+            "category": "pizza",
+            "id": 16,
+            "name": "Пицца",
+            "image": "/img/pizza/16.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Чикен барбекю",
+            "description": "Запеченная куриная грудка, бекон, ветчина, моцарелла, болгарский перец, красный лук, фирменный томатный соус, соус барбекю",
+            "price": 399,
+            "weight": 601
+        },
+        {
+            "category": "pizza",
+            "id": 17,
+            "name": "Пицца",
+            "image": "/img/pizza/17.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Четыре сыра",
+            "description": "Пармезан, моцарелла, дорблю, чеддер, сливочный соус",
+            "price": 399,
+            "weight": 507
+        },
+        {
+            "category": "pizza",
+            "id": 18,
+            "name": "Пицца",
+            "image": "/img/pizza/18.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Четыре мяса",
+            "description": "Мортаделла, чоризо, буженина, бекон, моцарелла, фирменный томатный соус",
+            "price": 599,
+            "weight": 649
+        },
+        {
+            "category": "pizza",
+            "id": 19,
+            "name": "Пицца",
+            "image": "/img/pizza/19.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Карбонара с беконом и пармезаном",
+            "description": "Бекон, томаты, пармезан, моцарелла, сливочный соус блю чиз, чеснок",
+            "price": 599,
+            "weight": 678
+        },
+        {
+            "category": "pizza",
+            "id": 20,
+            "name": "Пицца",
+            "image": "/img/pizza/20.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Буженина с соусом кальби",
+            "description": "Буженина, бекон, моцарелла, фирменный томатный соус, соус кальби, красный лук, кунжут",
+            "price": 599,
+            "weight": 621
+        },
+        {
+            "category": "pizza",
+            "id": 21,
+            "name": "Пицца",
+            "image": "/img/pizza/21.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Королевские креветки с блю чиз",
+            "description": "Королевские креветки, томаты, моцарелла, сливочный соус блю чиз, чеснок, руккола",
+            "price": 599,
+            "weight": 619
+        },
+        {
+            "category": "pizza",
+            "id": 22,
+            "name": "Пицца",
+            "image": "/img/pizza/22.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Прошутто с пармезаном и рукколой",
+            "description": "Пармская ветчина, пармезан, моцарелла, фирменный томатный соус, руккола",
+            "price": 599,
+            "weight": 589
+        },
+        {
+            "category": "pizza",
+            "id": 23,
+            "name": "Пицца",
+            "image": "/img/pizza/23.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "С мортаделлой, шампиньонами и страчателлой",
+            "description": "Мортаделла, маринованные шампиньоны, страчателла, моцарелла, фирменный томатный соус",
+            "price": 599,
+            "weight": 677
+        },
+        {
+            "category": "pizza",
+            "id": 24,
+            "name": "Пицца",
+            "image": "/img/pizza/24.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Том ям с королевскими креветками",
+            "description": "Королевские креветки, маринованные шампиньоны, томаты, моцарелла, соус сливочный том ям, зеленый лук",
+            "price": 599,
+            "weight": 628
+        },
+        {
+            "category": "pizza",
+            "id": 25,
+            "name": "Пицца",
+            "image": "/img/pizza/25.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Чикен блю чиз",
+            "description": "Запеченная куриная грудка, сыр с голубой плесенью, пармезан, моцарелла, сливочный соус блю чиз",
+            "price": 599,
+            "weight": 654
+        },
+        {
+            "category": "pizza",
+            "id": 26,
+            "name": "Пицца",
+            "image": "/img/pizza/26.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Мясная",
+            "description": "Запеченная куриная грудка, бекон, сервелат, жареный лук, моцарелла, руккола, кисло-сладкий соус, фирменный томатный соус",
+            "price": 549,
+            "weight": 604
+        },
+        {
+            "category": "pizza",
+            "id": 27,
+            "name": "Пицца",
+            "image": "/img/pizza/27.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Страчателла с песто и вяленными томатами",
+            "description": "Страчателла, моцарелла, вяленые томаты, руккола, соус песто, фирменный томатный соус",
+            "price": 549,
+            "weight": 556
+        },
+        {
+            "category": "pizza",
+            "id": 28,
+            "name": "Пицца",
+            "image": "/img/pizza/28.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Цезарь",
+            "description": "Запеченная куриная грудка, бекон, томаты, пармезан, моцарелла, руккола, сливочный соус, чесночный соус",
+            "price": 549,
+            "weight": 621
+        },
+        {
+            "category": "pizza",
+            "id": 29,
+            "name": "Пицца",
+            "image": "/img/pizza/29.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Четыре сыра",
+            "description": "Пармезан, чеддер, дорблю, моцарелла, сливочный соус",
+            "price": 549,
+            "weight": 526
+        },
+        {
+            "category": "pizza",
+            "id": 30,
+            "name": "Пицца",
+            "image": "/img/pizza/30.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Чикен песто",
+            "description": "Запеченная куриная грудка, томаты, моцарелла, соус песто, сливочный соус",
+            "price": 549,
+            "weight": 601
+        },
+        {
+            "category": "pizza",
+            "id": 31,
+            "name": "Пицца",
+            "image": "/img/pizza/31.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Бекон и грибы",
+            "description": "Запеченная куриная грудка, бекон, маринованные шампиньоны, моцарелла, чесночный соус",
+            "price": 549,
+            "weight": 626
+        },
+        {
+            "category": "pizza",
+            "id": 32,
+            "name": "Пицца",
+            "image": "/img/pizza/32.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Макс тейсти",
+            "description": "Сервелат, запеченная куриная грудка, томаты, маринованные огурцы, красный лук, моцарелла, соус макс тейсти, фирменный томатный соус, кунжут",
+            "price": 549,
+            "weight": 667
+        },
+        {
+            "category": "pizza",
+            "id": 33,
+            "name": "Пицца",
+            "image": "/img/pizza/33.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Трюфельная пепперони",
+            "description": "Пепперони, маринованные шампиньоны, моцарелла, фирменный томатный соус, трюфельное масло",
+            "price": 549,
+            "weight": 576
+        },
+        {
+            "category": "pizza",
+            "id": 34,
+            "name": "Пицца",
+            "image": "/img/pizza/34.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Прошутто, вяленые томаты, руккола",
+            "description": "Пармская ветчина, моцарелла, вяленые томаты, фирменный томатный соус, руккола",
+            "price": 699,
+            "weight": 608
+        },
+        {
+            "category": "pizza",
+            "id": 35,
+            "name": "Пицца",
+            "image": "/img/pizza/35.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Королевские креветки и страчателла",
+            "description": "Королевские креветки, пармезан, моцарелла, страчателла, фирменный томатный соус, руккола",
+            "price": 699,
+            "weight": 603
+        },
+        {
+            "category": "pizza",
+            "id": 36,
+            "name": "Пицца",
+            "image": "/img/pizza/36.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Прошутто, пармезан и руккола",
+            "description": "Пармская ветчина, пармезан, моцарелла, фирменный томатный соус, руккола",
+            "price": 699,
+            "weight": 578
+        },
+        {
+            "category": "pizza",
+            "id": 37,
+            "name": "Пицца",
+            "image": "/img/pizza/37.webp",
+            "size": [
+                1,
+                2,
+                3
+            ],
+            "title": "Мортаделла, страчателла и песто",
+            "description": "Моцарелла, мортаделла, страчателла, фирменный томатный соус, соус песто, руккола",
+            "price": 699,
+            "weight": 633
+        }
+    ],
+    "combo": [
+        {
+            "category": "combo",
+            "id": 1,
+            "name": "Комбо",
+            "image": "/img/combo/1.webp",
+            "title": "Детское комбо",
+            "description": "Пицца курица с ананасами, морс облепиховый, наггетсы",
+            "price": 649
+        },
+        {
+            "category": "combo",
+            "id": 2,
+            "name": "Комбо",
+            "image": "/img/combo/2.webp",
+            "title": "Комбо под игристое",
+            "description": "Римская пицца королевские креветки и страчателла, Римская пицца прошутто, пармезан и руккола",
+            "price": 1449
+        },
+        {
+            "category": "combo",
+            "id": 3,
+            "name": "Комбо",
+            "image": "/img/combo/3.webp",
+            "title": "Комбо попробуй все",
+            "description": "С мортаделлой и шампиньонами, Грузинская, Сырный цыпленок",
+            "price": 1399
+        },
+        {
+            "category": "combo",
+            "id": 4,
+            "name": "Комбо",
+            "image": "/img/combo/4.webp",
+            "title": "Комбо на одного",
+            "description": "Колбасная пицца, Добрый кола, Картофельные дольки, сырный соус",
+            "price": 639
+        },
+        {
+            "category": "combo",
+            "id": 5,
+            "name": "Комбо",
+            "image": "/img/combo/5.webp",
+            "title": "Комбо на двоих",
+            "description": "Том кха с курицей, Макс тейсти",
+            "price": 919
+        },
+        {
+            "category": "combo",
+            "id": 6,
+            "name": "Комбо",
+            "image": "/img/combo/6.webp",
+            "title": "Римское комбо",
+            "description": "Трюфельная пепперони, Бекон грибы, Цезарь",
+            "price": 1499
+        },
+        {
+            "category": "combo",
+            "id": 7,
+            "name": "Комбо",
+            "image": "/img/combo/7.webp",
+            "title": "Комбо 3 пиццы",
+            "description": "Пепперони, Чикен барбекю, Сырный цыпленок",
+            "price": 1149
+        },
+        {
+            "category": "combo",
+            "id": 8,
+            "name": "Комбо",
+            "image": "/img/combo/8.webp",
+            "title": "Комбо 6 пицц",
+            "description": "Пепперони, Колбасная, Сырный цыпленок, 4 сыра, Ветчина и грибы, Чикен барбекю",
+            "price": 2299
+        },
+        {
+            "category": "combo",
+            "id": 9,
+            "name": "Комбо",
+            "image": "/img/combo/9.webp",
+            "title": "Комбо 10 пицц",
+            "description": "Макс тейсти, Прошутто с пармезаном и рукколой, Криспи жюльен, Карбонара, Пепперони, Колбасная, Сырный цыпленок, 4 сыра, Ветчина и грибы, Чикен барбекю",
+            "price": 4299
+        }
+    ],
+    "upsters": [
+        {
+            "category": "upsters",
+            "id": 1,
+            "name": "Апстеры",
+            "image": "/img/upsters/1.webp",
+            "title": "Апстер Классика",
+            "description": "Лепешка пшеничная, курица запеченная, сыр моцарелла, сыр чеддер, помидоры, соус ранч",
+            "price": 189,
+            "weight": 264
+        },
+        {
+            "category": "upsters",
+            "id": 2,
+            "name": "Апстеры",
+            "image": "/img/upsters/2.webp",
+            "title": "Апстер Спайси-Чиз",
+            "description": "Лепешка пшеничная, курица запеченная, сыр моцарелла, помидоры, сыр чеддер, сырный соус, перец халапеньо, специи тако",
+            "price": 189,
+            "weight": 270
+        },
+        {
+            "category": "upsters",
+            "id": 3,
+            "name": "Апстеры",
+            "image": "/img/upsters/3.webp",
+            "title": "Апстер Макс тейсти",
+            "description": "Лепешка пшеничная, курица запеченная, сыр моцарелла, сыр чеддер, помидоры, маринованные огурчики, красный лук, соус макс тейсти",
+            "price": 189,
+            "weight": 279
+        },
+        {
+            "category": "upsters",
+            "id": 4,
+            "name": "Апстеры",
+            "image": "/img/upsters/4.webp",
+            "title": "Апстер BBQ",
+            "description": "Лепешка пшеничная, курица запеченная, сыр моцарелла, сыр чеддер, помидоры, красный лук, соус BBQ",
+            "price": 189,
+            "weight": 269
+        }
+    ],
+    "snacks": [
+        {
+            "category": "snacks",
+            "id": 1,
+            "name": "Закуски",
+            "image": "/img/snacks/1.webp",
+            "title": "Наггетсы",
+            "description": "Жареные куриные наггется в панировке",
+            "price": 189,
+            "weight": 250
+        },
+        {
+            "category": "snacks",
+            "id": 2,
+            "name": "Закуски",
+            "image": "/img/snacks/2.webp",
+            "title": "Стрипсы",
+            "description": "Жареные куриные стрипсы в панировке",
+            "price": 189,
+            "weight": 153
+        },
+        {
+            "category": "snacks",
+            "id": 3,
+            "name": "Закуски",
+            "image": "/img/snacks/3.webp",
+            "title": "Креветки в панировке",
+            "description": "Жареные креветки фри в панировке",
+            "price": 249,
+            "weight": 119
+        },
+        {
+            "category": "snacks",
+            "id": 4,
+            "name": "Закуски",
+            "image": "/img/snacks/4.webp",
+            "title": "Картофель Фри",
+            "description": "Жареный картофель фри",
+            "price": 149,
+            "weight": 140
+        },
+        {
+            "category": "snacks",
+            "id": 5,
+            "name": "Закуски",
+            "image": "/img/snacks/5.webp",
+            "title": "Дольки Фри",
+            "description": "Жареные картофельные дольки",
+            "price": 149,
+            "weight": 137
+        }
+    ],
+    "dessert": [
+        {
+            "category": "dessert",
+            "id": 1,
+            "name": "Десерты",
+            "image": "/img/dessert/1.webp",
+            "title": "Трайфл сливочно-сметанный",
+            "description": "Бисквитные коржи: классический и шоколадный, традиционный сметанный крем, шоколадная глазурь",
+            "price": 199,
+            "weight": 145
+        },
+        {
+            "category": "dessert",
+            "id": 2,
+            "name": "Десерты",
+            "image": "/img/dessert/2.webp",
+            "title": "Муравейник",
+            "description": "Песочные коржи, грецкие орехи, крем на основе вареной сгущенки и сливочного масла, шоколадная глазурь, шоколад",
+            "price": 199,
+            "weight": 145
+        },
+        {
+            "category": "dessert",
+            "id": 3,
+            "name": "Десерты",
+            "image": "/img/dessert/3.webp",
+            "title": "Медовик",
+            "description": "Медово-песочные коржи, сливочное масло, крем на основе натуральных сливок",
+            "price": 199,
+            "weight": 140
+        },
+        {
+            "category": "dessert",
+            "id": 4,
+            "name": "Десерты",
+            "image": "/img/dessert/4.webp",
+            "title": "Орео",
+            "description": "Печенье Орео, сливочное масло, крем на основе натуральных сливок",
+            "price": 199,
+            "weight": 145
+        }
+    ],
+    "beverages": [
+        {
+            "category": "beverages",
+            "id": 1,
+            "name": "Напитки",
+            "image": "/img/beverages/1.webp",
+            "title": "Сок Rich апельсиновый 1л",
+            "price": 199
+        },
+        {
+            "category": "beverages",
+            "id": 2,
+            "name": "Напитки",
+            "image": "/img/beverages/2.webp",
+            "title": "Сок Rich мультифрукт 1л",
+            "price": 199
+        },
+        {
+            "category": "beverages",
+            "id": 3,
+            "name": "Напитки",
+            "image": "/img/beverages/3.webp",
+            "title": "Добрый Cola 500мл",
+            "price": 99
+        },
+        {
+            "category": "beverages",
+            "id": 4,
+            "name": "Напитки",
+            "image": "/img/beverages/4.webp",
+            "title": "Rich черный чай со вкусом персика 500мл",
+            "price": 109
+        },
+        {
+            "category": "beverages",
+            "id": 5,
+            "name": "Напитки",
+            "image": "/img/beverages/5.webp",
+            "title": "Морс облепиховый Живая ягода 450мл",
+            "price": 109
+        },
+        {
+            "category": "beverages",
+            "id": 6,
+            "name": "Напитки",
+            "image": "/img/beverages/6.webp",
+            "title": "Бон аква без газа 500мл",
+            "price": 69
+        },
+        {
+            "category": "beverages",
+            "id": 7,
+            "name": "Напитки",
+            "image": "/img/beverages/7.webp",
+            "title": "Добрый Cola Zero 500мл",
+            "price": 99
+        },
+        {
+            "category": "beverages",
+            "id": 8,
+            "name": "Напитки",
+            "image": "/img/beverages/8.webp",
+            "title": "Морс клюквенный Живая ягода 450мл",
+            "price": 109
+        },
+        {
+            "category": "beverages",
+            "id": 9,
+            "name": "Напитки",
+            "image": "/img/beverages/9.webp",
+            "title": "Rich зеленый чай 500мл",
+            "price": 109
+        },
+        {
+            "category": "beverages",
+            "id": 10,
+            "name": "Напитки",
+            "image": "/img/beverages/10.webp",
+            "title": "Rich зеленый чай со вкусом манго 500мл",
+            "price": 109
+        },
+        {
+            "category": "beverages",
+            "id": 11,
+            "name": "Напитки",
+            "image": "/img/beverages/11.webp",
+            "title": "Добрый апельсин 500мл",
+            "price": 99
+        },
+        {
+            "category": "beverages",
+            "id": 12,
+            "name": "Напитки",
+            "image": "/img/beverages/12.webp",
+            "title": "Rich черный чай со вкусом лимона 500мл",
+            "price": 109
+        },
+        {
+            "category": "beverages",
+            "id": 13,
+            "name": "Напитки",
+            "image": "/img/beverages/13.webp",
+            "title": "Сок Rich яблочный 1л",
+            "price": 199
+        },
+        {
+            "category": "beverages",
+            "id": 14,
+            "name": "Напитки",
+            "image": "/img/beverages/14.webp",
+            "title": "Добрый лимон-лайм 500мл",
+            "price": 99
+        },
+        {
+            "category": "beverages",
+            "id": 15,
+            "name": "Напитки",
+            "image": "/img/beverages/15.webp",
+            "title": "Добрый манго-маракуйя 500мл",
+            "price": 99
+        },
+        {
+            "category": "beverages",
+            "id": 16,
+            "name": "Напитки",
+            "image": "/img/beverages/16.webp",
+            "title": "Сок Rich персиковый с мякотью 1л",
+            "price": 199
+        }
+    ],
+    "sauces": [
+        {
+            "category": "sauces",
+            "id": 1,
+            "name": "Соусы",
+            "image": "/img/sauces/1.webp",
+            "title": "Грузинская сальса",
+            "description": "Незаменимый напарник для бортиков пиццы, картошечки и наггетсов",
+            "price": 50,
+            "weight": 50
+        },
+        {
+            "category": "sauces",
+            "id": 2,
+            "name": "Соусы",
+            "image": "/img/sauces/2.webp",
+            "title": "Сырный с халапеньо",
+            "description": "Незаменимый напарник для бортиков пиццы, картошечки и наггетсов",
+            "price": 50,
+            "weight": 50
+        },
+        {
+            "category": "sauces",
+            "id": 3,
+            "name": "Соусы",
+            "image": "/img/sauces/3.webp",
+            "title": "Тартар",
+            "description": "Незаменимый напарник для бортиков пиццы, картошечки и наггетсов",
+            "price": 50,
+            "weight": 50
+        },
+        {
+            "category": "sauces",
+            "id": 4,
+            "name": "Соусы",
+            "image": "/img/sauces/4.webp",
+            "title": "Соус Сырный",
+            "description": "",
+            "price": 39,
+            "weight": 25
+        },
+        {
+            "category": "sauces",
+            "id": 5,
+            "name": "Соусы",
+            "image": "/img/sauces/5.webp",
+            "title": "Соус Кисло-сладкий",
+            "description": "",
+            "price": 39,
+            "weight": 25
+        },
+        {
+            "category": "sauces",
+            "id": 6,
+            "name": "Соусы",
+            "image": "/img/sauces/6.webp",
+            "title": "Острое масло",
+            "description": "Незаменимый напарник для бортиков пиццы, картошечки и наггетсов",
+            "price": 30,
+            "weight": 23
+        },
+        {
+            "category": "sauces",
+            "id": 7,
+            "name": "Соусы",
+            "image": "/img/sauces/7.webp",
+            "title": "Соус Барбекю",
+            "description": "",
+            "price": 39,
+            "weight": 25
+        },
+        {
+            "category": "sauces",
+            "id": 8,
+            "name": "Соусы",
+            "image": "/img/sauces/8.webp",
+            "title": "Соус Томатный",
+            "description": "",
+            "price": 39,
+            "weight": 25
+        },
+        {
+            "category": "sauces",
+            "id": 9,
+            "name": "Соусы",
+            "image": "/img/sauces/9.webp",
+            "title": "Соус Чесночный",
+            "description": "",
+            "price": 39,
+            "weight": 25
+        }
+    ]
+}
