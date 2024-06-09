@@ -13,6 +13,7 @@ function Pizza({ onAddToCart }) {
   const [allProducts, setAllProducts] = useState([]);
   const dispatch = useDispatch();
   const limit = 12;
+  const API_KEY_PIZZA = process.env.REACT_APP_API_KEY_PIZZA;
 
   const [sortType, setSortType] = useState({
     name: "Цене ( DESC )",
@@ -28,7 +29,7 @@ function Pizza({ onAddToCart }) {
     setIsLoad(true);
     axios
       .get(
-        `https://${REACT_APP_API_KEY_PIZZA}.mockapi.io/pizza?&sortBy=${sortBy}&order=${order}${search}`
+        `https://${API_KEY_PIZZA}.mockapi.io/pizza?&sortBy=${sortBy}&order=${order}${search}`
       )
       .then((response) => {
         setAllProducts(response.data);
