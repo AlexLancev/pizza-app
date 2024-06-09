@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Pagination } from "../../components/Pagination";
 import { currentProduct } from "../../redux/currentProductList/reducer";
 import axios from "axios";
+const API_KEY_PIZZA = process.env.REACT_APP_API_KEY_PIZZA;
 
 function Pizza({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
@@ -27,7 +28,7 @@ function Pizza({ onAddToCart }) {
     setIsLoad(true);
     axios
       .get(
-        `https://${REACT_APP_API_KEY_PIZZA}.mockapi.io/pizza?&sortBy=${sortBy}&order=${order}${search}`
+        `https://${API_KEY_PIZZA}.mockapi.io/pizza?&sortBy=${sortBy}&order=${order}${search}`
       )
       .then((response) => {
         setAllProducts(response.data);
