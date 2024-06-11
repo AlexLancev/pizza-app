@@ -1,5 +1,15 @@
+import "./style.scss";
+
 function NotFoundPage() {
-  return <h1>Ничего не найденно</h1>;
+  return (
+    <div className="error">
+      <b className="error__heading">Произошла ошибка 😕</b>
+      <p className="error__description">
+        К сожалению, не удалось найти интересующий вас товар, повторите попытку
+        позже.
+      </p>
+    </div>
+  );
 }
 
 export { NotFoundPage };

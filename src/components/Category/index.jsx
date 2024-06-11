@@ -20,7 +20,7 @@ function Category() {
         return (
           <li className="category__item" key={index}>
             <Link
-              className="category__link"
+              className={index === 0 ? `category__link category__link--first` : `category__link`}
               to={`/${cat[1]}`}
             >
               {cat[0]}

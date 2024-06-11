@@ -48,7 +48,7 @@ function Search() {
         <button
           onClick={inCloseClear}
           type="button"
-          className="search__btn search__btn--close"
+          className="search__btn-close"
         >
           <IoIosClose size={20} fill="#464646" className="search__icon" />
         </button>

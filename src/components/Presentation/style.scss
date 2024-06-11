@@ -1,13 +1,33 @@
+@import '../../styles/base/variables';
+
 .presentation {
     padding: 70px 0 50px;
 
     &__inner {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 70px;
+
+        @include breakpoint(lg) {
+            gap: 10px;
+        }
+
+        @include breakpoint(md) {
+            flex-direction: column;
+        }
     }
 
     &__image {
+
+        @include breakpoint(lg) {
+            width: 300px;
+            height: 300px;
+        }
+
+        @include breakpoint(md) {
+            margin-bottom: 30px;
+        }
     }
 
     &__remove {
@@ -61,6 +81,12 @@
     &__title {
         font-size: 30px;
         margin-bottom: 10px;
+
+        @include breakpoint(lg) {
+            font-size: 25px;
+            line-height: 1.1;
+        }
+        
     }
 
     &__description {
@@ -68,6 +94,10 @@
         line-height: 1.5;
         color: #646464;
         margin-bottom: 10px;
+
+        @include breakpoint(lg) {
+            font-size: 18px;
+        }
     }
 
     &__quantity {

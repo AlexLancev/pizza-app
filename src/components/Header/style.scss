@@ -1,3 +1,5 @@
+@import '../../styles/base/variables';
+
 .header {
 
     &__inner {
@@ -7,6 +9,27 @@
         flex-wrap: wrap;
         gap: 30px;
         padding: 30px 0;
+
+        @include breakpoint(md) {
+            padding: 20px 0;
+        }
+    }
+
+}
+
+.logo {
+
+    &__img {
+        width: 100px;
+        height: auto;
+
+        @include breakpoint(md) {
+            width: 90px;
+        }
+
+        @include breakpoint(xxs) {
+            width: 80px;
+        }
     }
 }
 
@@ -17,6 +40,21 @@
     position: relative;
 
     &__icon {
+
+        @include breakpoint(lg) {
+            width: 35px;
+            height: 35px;
+        }
+
+        @include breakpoint(md) {
+            width: 30px;
+            height: 30px;
+        }
+
+        @include breakpoint(xxs) {
+            width: 25px;
+            height: 25px;
+        }
     }
 
     &__quantity {
@@ -31,6 +69,24 @@
         position: absolute;
         top: -3px;
         right: -5px;
+
+        @include breakpoint(lg) {
+            width: 20px;
+            height: 20px;
+            font-size: 14px;
+        }
+
+        @include breakpoint(md) {
+            width: 15px;
+            height: 15px;
+            font-size: 12px;
+        }
+
+        @include breakpoint(xxs) {
+            width: 12px;
+            height: 12px;
+            font-size: 10px;
+        }
     }
 }
 
@@ -38,4 +94,12 @@
     display: flex;
     align-items: center;
     gap: 30px;
+
+    @include breakpoint(md) {
+        gap: 15px;
+    }
+
+    @include breakpoint(xxs) {
+        gap: 10px;
+    }
 }

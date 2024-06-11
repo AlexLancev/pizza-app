@@ -1,3 +1,5 @@
+@import '../../styles/base/variables';
+
 .cart {
     visibility: hidden;
     position: fixed;
@@ -29,6 +31,10 @@
         max-width: 800px;
         min-height: 100%;
         margin-left: auto;
+
+        @include breakpoint(sm) {
+            padding: 20px;
+        }
     }
     
     &__order {
@@ -39,6 +45,10 @@
         position: absolute;
         top: 15px;
         right: 45px;
+
+        @include breakpoint(sm) {
+            right: 20px;
+        }
     }
 
     &__lock-icon {
@@ -119,6 +129,11 @@
         font-size: 23px;
         font-weight: 400;
         color: #404040;
+
+        @include breakpoint(sm) {
+            font-size: 16px;
+        }
+
     }
 
     &__quantity-inner {

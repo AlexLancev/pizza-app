@@ -1,0 +1,13 @@
+.error {
+    padding: 20px 0;
+
+    &__heading {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 25px;
+    }
+
+    &__description {
+        font-size: 20px;
+    }
+}

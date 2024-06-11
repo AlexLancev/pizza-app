@@ -3,6 +3,7 @@ import currentProductListSlice from "./currentProductList/reducer";
 import presentationSlice from "./product/reducer";
 import searchCounterSlice from "./search/reducer";
 import cartSlice from "./cart/reducer";
+import submitSlice from "./onSubmit/reducer";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     presentation: presentationSlice,
     search: searchCounterSlice,
     cart: cartSlice,
+    submit: submitSlice
   },
 });

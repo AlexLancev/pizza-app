@@ -1,3 +1,5 @@
+@import '../../styles/base/variables';
+
 .footer {
     background-color: #181818;
     color: #d5d5d5;
@@ -12,6 +14,11 @@
 
 .footer-category {
 
+    @include breakpoint(sm) {
+        display: none;
+    }
+    
+
     &__item:not(:last-child) {
         margin-bottom: 15px;
     }
@@ -19,7 +26,6 @@
     &__link {
         font-size: 18px;
         color: #d5d5d5;
-
     }
 }
 
@@ -29,18 +35,35 @@
         display: block;
         font-size: 24px;
         margin-bottom: 20px;
+
+        @include breakpoint(md) {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
     }
 
     &__list:not(:last-child) {
         margin-bottom: 50px;
+
+        @include breakpoint(md) {
+            margin-bottom: 30px;
+        }
     }
 
     &__item {
         margin-bottom: 15px;
+
+        @include breakpoint(md) {
+            margin-bottom: 10px;
+        }
     }
 
     &__link {
         color: #d5d5d5;
+
+        @include breakpoint(md) {
+            font-size: 14px;
+        }
 
     }
 }

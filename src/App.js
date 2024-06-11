@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Layout } from "./components/Layout";
 import { Pizza } from "./pages/Pizza";
 import { Combo } from "./pages/Combo";

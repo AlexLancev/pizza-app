@@ -16,13 +16,7 @@ function List({ isLoad, isError, value, onChangeSort, onAddToCart }) {
         </h2>
         <Sort value={value} onChangeSort={(i) => onChangeSort(i)} />
       </div>
-      <ul className="product__list">
-        <Product
-          onAddToCart={onAddToCart}
-          isLoad={isLoad}
-          isError={isError}
-        />
-      </ul>
+      <Product onAddToCart={onAddToCart} isLoad={isLoad} isError={isError} />
     </section>
   );
 }

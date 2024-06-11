@@ -1,5 +1,11 @@
+@import '../../styles/base/variables';
+
 .delivery {
     padding: 70px 0 0;
+
+    @include breakpoint(md) {
+        padding: 40px 0 0;
+    }
 
     &__head {
         display: block;

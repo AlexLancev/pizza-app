@@ -28,7 +28,7 @@ function Presentation({ onAddToCart }) {
   }
 
   const { id, image, title, category, name, weight, price, size, description } = currentProduct.product;
-  const inCart = cartProduct.find((el) => el.cartId === id);
+  const inCart = cartProduct.find((el) => el.name === name && el.cartId === id);
 
   const handleSizeChange = (e) => {
     setActiveSize(Number(e.target.value));
@@ -37,17 +37,7 @@ function Presentation({ onAddToCart }) {
   return (
     <section className="presentation">
       <div className="container">
-        <div className="presentation__inner">
-          <img
-            width={400}
-            height={400}
-            src={image}
-            alt={title}
-            title={title}
-            className="presentation__image"
-          />
-          <div className="presentation__info" data-parrent>
-            <div className="presentation__home">
+      <div className="presentation__home">
               <Link
                 to={`/${category}`}
                 className="presentation__link-home"
@@ -61,6 +51,16 @@ function Presentation({ onAddToCart }) {
               </Link>
               <b className="presentation__category">{name}</b>
             </div>
+        <div className="presentation__inner">
+          <img
+            width={400}
+            height={400}
+            src={image}
+            alt={title}
+            title={title}
+            className="presentation__image"
+          />
+          <div className="presentation__info" data-parrent>
             <h2 className="presentation__title">{title}</h2>
             <p className="presentation__description">{description}</p>
             <div className="presentation__quantity">

@@ -1,5 +1,11 @@
+@import '../../styles/base/variables';
+
 .product {
     padding: 70px 0;
+
+    @include breakpoint(sm) {
+        padding: 50px 0;
+    }
 
     &__header {
         display: flex;
@@ -8,18 +14,26 @@
         flex-wrap: wrap;
         gap: 30px;
         margin-bottom: 30px;
+
+        @include breakpoint(sm) {
+            gap: 10px;
+        }
     }
 
     &__title {
         display: block;
         min-height: 56px;
         font-size: 40px;
+
+        @include breakpoint(sm) {
+            min-height: 45px;
+            font-size: 31px;
+        }
     }
 
     &__list {
-        display: flex;
-        align-items: stretch;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(294.4px, 1fr));
         gap: 34px;
     }
 }

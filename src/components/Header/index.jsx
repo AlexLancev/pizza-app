@@ -27,6 +27,7 @@ function Header({ onRemoveItem }) {
         <div className="header__inner">
           <a href="/pizza" className="logo">
             <img
+              className="logo__img"
               width={130}
               height={100}
               src="/img/logo-full.png"
