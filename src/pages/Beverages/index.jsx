@@ -9,11 +9,12 @@ const API_KEY_BEVERAGES = process.env.REACT_APP_API_KEY_BEVERAGES;
 
 function Beverages({ onAddToCart }) {
   const [isLoad, setIsLoad] = useState(true);
+  const [isError, setError] = useState(false);
   const [pageCurrent, setPageCurrent] = useState(1);
   const [allProducts, setAllProducts] = useState([]);
   const dispatch = useDispatch();
   const limit = 12;
-  
+
   const [sortType, setSortType] = useState({
     name: "Цене ( DESC )",
     sortProperty: "price",
@@ -35,9 +36,11 @@ function Beverages({ onAddToCart }) {
       .then((response) => {
         setAllProducts(response.data);
         setIsLoad(false);
+        setError(false);
       })
       .catch((error) => {
         console.error("Ошибка получения данных: ", error);
+        setError(true);
       });
     window.scrollTo(0, 0);
   }, [sortBy, order, search, dispatch]);
@@ -52,13 +55,14 @@ function Beverages({ onAddToCart }) {
 
   return (
     <div className="container">
-       <List
+      <List
         value={sortType}
         onChangeSort={(i) => setSortType(i)}
         isLoad={isLoad}
+        isError={isError}
         onAddToCart={onAddToCart}
       />
-      {allProducts.length > limit && (
+      {!isError && allProducts.length > limit && (
         <Pagination
           limit={limit}
           total={allProducts.length}
@@ -70,4 +74,3 @@ function Beverages({ onAddToCart }) {
 }
 
 export { Beverages };
-
